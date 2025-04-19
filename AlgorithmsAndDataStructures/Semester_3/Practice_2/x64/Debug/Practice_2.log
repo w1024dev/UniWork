@@ -1,0 +1,7 @@
+﻿  Practice_2.cpp
+D:\Visual_Studio\Projects\SIAOD_2nd_Semester\Practice_2\Practice_2.cpp(161,30): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Visual_Studio\Projects\SIAOD_2nd_Semester\Practice_2\Practice_2.cpp(459,30): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Visual_Studio\Projects\SIAOD_2nd_Semester\Practice_2\Practice_2.cpp(491,30): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Visual_Studio\Projects\SIAOD_2nd_Semester\Practice_2\Practice_2.cpp(520,30): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Visual_Studio\Projects\SIAOD_2nd_Semester\Practice_2\Practice_2.cpp(564,19): warning C4244: '=': conversion from 'std::streamoff' to 'int', possible loss of data
+  Practice_2.vcxproj -> D:\Visual_Studio\Projects\SIAOD_2nd_Semester\x64\Debug\Practice_2.exe

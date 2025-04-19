@@ -1,0 +1,4 @@
+﻿  Practice_4.cpp
+D:\Visual_Studio\Projects\SIAOD_2nd_Semester\Practice_4\Practice_4.cpp(195,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Visual_Studio\Projects\SIAOD_2nd_Semester\Practice_4\Practice_4.cpp(65): warning C4172: returning address of local variable or temporary: avg_array
+  Practice_4.vcxproj -> D:\Visual_Studio\Projects\SIAOD_2nd_Semester\x64\Debug\Practice_4.exe

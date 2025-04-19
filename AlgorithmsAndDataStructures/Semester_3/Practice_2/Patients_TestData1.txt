@@ -1,0 +1,5 @@
+1001 100 Popov A.D.
+1002 100 Demidov M.D.
+1003 100 Zhukov B.M.
+1004 102 Petrov S.S.
+1005 101 Sergeev P.P.

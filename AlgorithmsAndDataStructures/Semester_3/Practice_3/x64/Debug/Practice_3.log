@@ -1,0 +1,8 @@
+﻿  Practice_3.cpp
+D:\Visual_Studio\Projects\SIAOD_2nd_Semester\Practice_3\Practice_3.cpp(93,11): warning C4477: 'printf' : format string '%21f' requires an argument of type 'double', but variadic argument 1 has type 'std::chrono::duration<double,std::ratio<1,1>>'
+D:\Visual_Studio\Projects\SIAOD_2nd_Semester\Practice_3\Practice_3.cpp(100,11): warning C4477: 'printf' : format string '%f' requires an argument of type 'double', but variadic argument 1 has type 'std::chrono::duration<double,std::ratio<1,1>>'
+D:\Visual_Studio\Projects\SIAOD_2nd_Semester\Practice_3\Practice_3.cpp(113,11): warning C4477: 'printf' : format string '%21f' requires an argument of type 'double', but variadic argument 1 has type 'std::chrono::duration<double,std::ratio<1,1>>'
+D:\Visual_Studio\Projects\SIAOD_2nd_Semester\Practice_3\Practice_3.cpp(120,11): warning C4477: 'printf' : format string '%f' requires an argument of type 'double', but variadic argument 1 has type 'std::chrono::duration<double,std::ratio<1,1>>'
+D:\Visual_Studio\Projects\SIAOD_2nd_Semester\Practice_3\Practice_3.cpp(133,11): warning C4477: 'printf' : format string '%21f' requires an argument of type 'double', but variadic argument 1 has type 'std::chrono::duration<double,std::ratio<1,1>>'
+D:\Visual_Studio\Projects\SIAOD_2nd_Semester\Practice_3\Practice_3.cpp(140,11): warning C4477: 'printf' : format string '%f' requires an argument of type 'double', but variadic argument 1 has type 'std::chrono::duration<double,std::ratio<1,1>>'
+  Practice_3.vcxproj -> D:\Visual_Studio\Projects\SIAOD_2nd_Semester\x64\Debug\Practice_3.exe
