@@ -1,0 +1,18 @@
+a = "92805"
+b = sum(as.numeric(strsplit(a, "")[[1]]))
+f = function(l){
+  max(unlist(l))
+}
+f(c("sss", "dd", "g"))
+nacount = function(g){
+  sum(is.na(g))
+}
+nacount(c(NA, 10, NA))
+v = seq(1:3)
+v1 = seq(1:3)
+v2 = seq(1:3)
+v3 = seq(1:3)
+v4 = seq(1:3)
+
+a = data.frame(v, v1, v2, v3, v4)
+a[c(3,5), c(1,3)]

@@ -1,0 +1,145 @@
+#????? 2
+# ??????? 1
+if ("quantmod" %in% rownames(installed.packages()) == FALSE) {
+  install.packages("quantmod") }
+library(quantmod)
+if ("stringr" %in% rownames(installed.packages()) == FALSE) {
+  install.packages("stringr") }
+library(stringr)
+downloadable_stocks <- c("ATVI", "^IXIC")
+quantmod::getSymbols(Symbols = downloadable_stocks,
+                     src = "yahoo",
+                     from = as.Date.character("1900-01-01"))
+db <- data.frame(get(downloadable_stocks[1]))
+downloadable_stocks <- stringr::str_remove(downloadable_stocks, "[:punct:\\^]")
+rm(list = downloadable_stocks)
+print(head(db))
+
+# ??????? 2
+out_of_trend <- function(x, dt, method = "Arifm") {
+  stopifnot(length(x) >= 3, is.numeric(dt), dt <= ceiling(length(x) / 2) - 1, is.numeric(x))
+  res <- c()
+  for(i in 1:length(x)) {
+    if ((i - dt >= 1) && (i + dt <= length(x))) {
+      if (method == "Geom") {
+        res<- append(res, log((x[i - dt]*x[i + dt]) / ((x[i])^2)))
+      } else if (method == "Garm") {
+        res <- append(res, log((2*x[i - dt]*x[i + dt]) / (x[i]*(x[i - dt] + x[i + dt]))))
+      } else {
+        res <- append(res, log((x[i - dt] + x[i + dt]) / (2*x[i])))
+      }
+    }
+  }
+  return(res)
+}
+
+data = db$ATVI.Open
+data <- data + min(data) + 1
+res <- out_of_trend(x=data, dt = 1, method = "Geom")
+print(head(res))
+print(length(res))
+
+# ??????? 3
+t <- seq(0, 10, 0.1)
+x <- 2*t + 3 + sin(2*t)
+print(x)
+x_mean <- mean(x)
+print(x_mean)
+x <- x + min(x) + 1
+xn <- out_of_trend(x, dt = 1, method = "Garm")
+print(xn)
+xn_mean <- mean(xn)
+print(xn_mean)
+plot(t, x, type="l", lty="solid")
+plot(t[1:99], xn, type="l", lty="solid", ylim=range(-0.007, 0.007))
+
+# ??????? 4
+Alter_Johns <- function(x, dt) {
+  at = 0
+  for(i in 1:(length(x) - dt)) {
+    at = x[i + dt] - x[i]
+  }
+  at = at/(length(x) - dt)
+}
+res <- Alter_Johns(x, dt=1)
+print(res)
+lines(t[1:99], rep(res, 99), type="l", ylim=range(-0.007, 0.007))
+
+# ??????? 5
+res <- Alter_Johns(xn, dt=3)
+print(res)
+
+# ??????? 6
+trend_res <- out_of_trend(db$ATVI.Open, dt=500, method="Arifm")
+aj_res <- Alter_Johns(db$ATVI.Open, dt=1)
+t <- seq(0, length(trend_res) - 1)
+plot(seq(0, length(trend_res) + 999), db$ATVI.Open, type="l", lty="solid")
+plot(t, trend_res, type="l", lty="solid")
+
+#????? 3
+SIM <- function(A, u0, f, n_iter = 10e5, eps = 10e-7) {
+  stopifnot(n_iter>0, epsilon>0, n>=2, is.numeric(A))
+  max_Af <- max(max(A), max(f))
+  A <- A / max_Af
+  f <- f / max_Af
+  I <- diag(nrow = nrow(A))
+  B <- I - A
+  uprev = u0
+  u <- B %*% uprev + f
+  counter <- 1
+  while(max(abs(u - uprev)) > epsilon && counter < n_iter - 1) {
+    uprev = u
+    u <- B %*% uprev + f
+    counter <- counter + 1
+  }
+  res <- u
+}
+
+n <- as.numeric(readline("??????? ?????? ???????: "))
+A <- matrix(0, nrow = n, ncol = n)
+print("??????? ???????? ??????? (?? ????????): ")
+for (i in 1:n) {
+  for (j in 1:n) {
+    A[j,i] <- as.numeric(readline())
+  }
+}
+print("??????? ?????? ????????? ??????: ")
+f <- vector()
+for (i in 1:n)
+  f[i] <- as.numeric(readline())
+print(A)
+print(f)
+u0 <- f
+epsilon <- as.numeric(readline("??????? ???????? ?????????? ???????: "))
+n_iter <- as.numeric(readline("??????? ????? ????????: "))
+res <- SIM(A, u0, f, n_iter, eps)
+print(res)
+"
+2
+1
+1
+3
+-2
+0
+-1
+1
+2
+
+9
+3
+2
+
+10
+1
+-1
+1
+10
+1
+-1
+-1
+10
+ 
+11
+10
+10
+"

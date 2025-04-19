@@ -1,0 +1,26 @@
+{
+    "id": "213BC90A",
+    "path": "D:/RStudio/Workspaces/Working_Directories/Term_Paper/Time_Series_Decomposition.R",
+    "project_path": "Time_Series_Decomposition.R",
+    "type": "r_source",
+    "hash": "2984404513",
+    "contents": "",
+    "dirty": true,
+    "created": 1739799648363.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "105,43",
+        "scrollLine": "80"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1739905885,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1739905910843,
+    "read_only": false,
+    "read_only_alternatives": []
+}
